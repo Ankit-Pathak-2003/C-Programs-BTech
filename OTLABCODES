@@ -57,9 +57,9 @@ plot(x1,x21,x1,x22)
 
 c1=find(x1==0)
 c2=find(x21==0)
-Line1=[x1([c2 c1]);x21([c2 c1])]'
+Line1=[x1([c2 c1]);x21([c2 c1])]
 c3=find(x22==0)
-Line2=[x1([c3 c1]);x22([c3 c1])]'
+Line2=[x1([c3 c1]);x22([c3 c1])]
 corpt=unique([Line1;Line2],'rows')
 
 % To find the point of intersection
@@ -79,7 +79,7 @@ for i=1:size(A,1)
         end
 end
     % Write all corner points
-    ptt=pt'
+    ptt=pt
     allpt=[ptt;corpt];
     points=unique(allpt,'rows')
 %     feasible region
@@ -96,7 +96,7 @@ points(S,:)=[]
 %points(s3,:)=[]
 %points(s4,:)=[]
 % objective value and points
-value=points*c'
+value=points*c
 [obj,index]=min(value)
 X1=points(index,1)
 X2=points(index,2)
